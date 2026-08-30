@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+<main class="wrap">
+  <section class="content-block" style="max-width:none;">
+    <p class="eyebrow">{{ category | capitalize }} — {{ date | readableDate }}</p>
+    <h1>{{ title }}</h1>
+  </section>
+  <section class="content-block">
+    {% if image %}<img src="{{ image }}" alt="{{ title }}" style="width:100%; border:1px solid var(--line); margin-bottom:20px;">{% endif %}
+    {{ content | safe }}
+  </section>
+</main>

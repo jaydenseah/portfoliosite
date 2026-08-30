@@ -1,0 +1,67 @@
+---
+layout: base.njk
+title: Sports, Events & Wedding Photographer
+---
+<div class="scoreboard">
+  <div class="scoreboard-track">
+    {% for item in collections.portfolio | reverse %}<span><b>{{ item.data.category | upper }}</b>{{ item.data.title }}</span>{% endfor %}
+    {% for item in collections.portfolio | reverse %}<span><b>{{ item.data.category | upper }}</b>{{ item.data.title }}</span>{% endfor %}
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Johor, Malaysia — Sports · Events · Weddings</p>
+    <h1>I shoot the moment before it becomes <em>a memory.</em></h1>
+    <p>From match day at Stadium Sultan Ibrahim to first dances and boardroom anniversaries — one photographer, three worlds, no wasted frames.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#work">See the work</a>
+      <a class="btn ghost" href="/about/#contact">Get in touch</a>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="section-head">
+      <h2 class="section-title">Selected <em>works</em></h2>
+    </div>
+
+    <div class="filters">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="sports">Sports</button>
+      <button data-filter="wedding">Wedding</button>
+      <button data-filter="event">Event</button>
+      <button data-filter="editorial">Editorial</button>
+    </div>
+
+    <div class="grid" id="grid">
+      {% for item in collections.portfolio | reverse %}
+      <div class="card" data-cat="{{ item.data.category }}">
+        <span class="tag {{ item.data.category }}">{{ item.data.category | capitalize }}</span>
+        {% if item.data.image %}
+          <img src="{{ item.data.image }}" alt="{{ item.data.title }}">
+        {% else %}
+          <div class="card-fill"></div>
+        {% endif %}
+        <div class="card-meta"><span class="title">{{ item.data.title }}</span></div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+</main>
+
+<script>
+  const buttons = document.querySelectorAll('.filters button');
+  const cards = document.querySelectorAll('.card');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(c => {
+        c.style.display = (f === 'all' || c.dataset.cat === f) ? '' : 'none';
+      });
+    });
+  });
+</script>

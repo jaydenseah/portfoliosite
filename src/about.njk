@@ -1,0 +1,38 @@
+---
+layout: base.njk
+title: About
+---
+<main class="wrap">
+  <section class="content-block">
+    <p class="eyebrow">About</p>
+    <h1>Three worlds, <em>one lens.</em></h1>
+    <p>I'm a photographer based in Johor, Malaysia, working across sports, weddings, and events. Whatever the setting, the job is the same — read the room, anticipate the moment, and be in position before it happens.</p>
+    <p>Match days taught me to shoot fast and trust instinct. Weddings taught me patience and how to disappear into a room. Corporate events taught me to find a real moment inside a scheduled one. All three feed each other.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>120+</b><span>Weddings Shot</span></div>
+      <div class="stat"><b>7 Yrs</b><span>Behind the Camera</span></div>
+      <div class="stat"><b>50+</b><span>Match Days Covered</span></div>
+    </div>
+  </section>
+
+  <section class="contact-block" id="contact">
+    <p class="eyebrow">Get in touch</p>
+    <h2 class="section-title" style="margin-top:14px;">Let's book a <em>shoot.</em></h2>
+    <form onsubmit="event.preventDefault(); this.querySelector('.submit-btn').textContent='Sent — Thank You';">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@email.com" required>
+      </div>
+      <div>
+        <label for="details">What are you booking?</label>
+        <textarea id="details" placeholder="Sports coverage, wedding, event — date and details"></textarea>
+      </div>
+      <button class="submit-btn" type="submit">Send Inquiry</button>
+    </form>
+  </section>
+</main>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }} — Jayden Seah</title>
+<meta name="description" content="Jayden Seah is a professional photographer specializing in sports, events, and wedding photography based in Johor, Malaysia.">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-inner">
+    <div class="brand">Jayden <b>Seah</b></div>
+    <nav class="navlinks">
+      <a href="/" {% if page.url == "/" %}class="current"{% endif %}>Works</a>
+      <a href="/about/" {% if page.url == "/about/" %}class="current"{% endif %}>About</a>
+      <a href="/blog/" {% if "/blog/" in page.url %}class="current"{% endif %}>Blog</a>
+    </nav>
+  </div>
+</header>
+
+{{ content | safe }}
+
+<footer class="site">
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
+    <span>© 2026 Jayden Seah Photography</span>
+    <span>Johor, Malaysia</span>
+  </div>
+</footer>
+
+</body>
+</html>

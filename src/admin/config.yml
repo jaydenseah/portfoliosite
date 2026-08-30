@@ -1,0 +1,42 @@
+backend:
+  name: github
+  repo: your-github-username/your-repo-name   # <-- replace with your actual GitHub repo
+  branch: main
+
+# Decap commits uploaded photos here; Eleventy copies this folder straight through to the built site
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "src/content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["sports", "wedding", "event", "editorial"]
+      - { label: "Photo", name: "image", widget: "image" }
+      - { label: "Date Shot", name: "date", widget: "datetime" }
+      - { label: "Featured on homepage", name: "featured", widget: "boolean", default: false }
+      - { label: "Notes", name: "body", widget: "text", required: false }
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["sports", "wedding", "event", "editorial"]
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Cover Photo", name: "image", widget: "image", required: false }
+      - { label: "Post Body", name: "body", widget: "markdown" }

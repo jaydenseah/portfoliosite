@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: Blog
+---
+<main class="wrap">
+  <section class="content-block" style="max-width:none;">
+    <p class="eyebrow">Blog</p>
+    <h1>Notes from <em>the field.</em></h1>
+  </section>
+
+  <section class="post-list">
+    {% for post in collections.blog | reverse %}
+    <a href="{{ post.url }}" class="post-row" style="text-decoration:none; color:inherit;">
+      <span class="post-date">{{ post.data.date | readableDate }}</span>
+      <span class="post-title">{{ post.data.title }}</span>
+      <span class="post-cat">{{ post.data.category }}</span>
+    </a>
+    {% endfor %}
+  </section>
+</main>
