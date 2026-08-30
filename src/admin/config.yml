@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: your-github-username/your-repo-name   # <-- replace with your actual GitHub repo
+  repo: https://github.com/jaydenseah/portfoliosite   # <-- replace with your actual GitHub repo
   branch: main
 
 # Decap commits uploaded photos here; Eleventy copies this folder straight through to the built site
